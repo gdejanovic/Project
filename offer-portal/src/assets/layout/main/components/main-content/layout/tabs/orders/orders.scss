@@ -1,0 +1,9 @@
+.filters {
+    display: flex;
+    justify-content: space-around;
+    height: 50px;
+    .form-group.filter {
+        display: flex;
+        height: 40px;
+    }
+}

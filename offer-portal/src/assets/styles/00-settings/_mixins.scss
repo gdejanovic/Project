@@ -1,0 +1,29 @@
+// Transition
+@mixin transition($property: all) {
+	transition: $property 0.2s ease-in-out;
+}
+
+// Transition delay
+@mixin transition-delay($delay...) {
+	transition-delay: $delay;
+}
+
+// No transition
+@mixin no-transition() {
+	transition: none;
+}
+
+// Ellipsis
+@mixin ellipsis {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+// Clamp
+@mixin clamp($lines) {
+	display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

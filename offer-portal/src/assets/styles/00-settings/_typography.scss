@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:wght@700&display=swap');
+
+$raleway: 'Raleway', sans-serif;
+$openSans: 'Open Sans', sans-serif;
+
+$base-font-size: 16px;
+$base-font-size-md: 18px;
+$base-font-size-lg: 20px;
+
+:root {
+    --base-font-size: #{$base-font-size};
+    --h1-base-font-size: 40px;
+    --h2-base-font-size: 32px;
+    --h3-base-font-size: 24px;
+    --h4-base-font-size: 16px;
+    --h5-base-font-size: 16px;
+    --h6-base-font-size: 16px;
+
+    @for $i from 1 to 6 {
+        --h#{$i}-font-size: var(--h#{$i}-base-font-size);
+    }
+}
+
+body, h1, h2, h3, h4, h5, h6, p {
+    color: $black;
+    line-height: 1.5em;
+
+    a {
+        color: $secondary;
+        text-decoration: none;
+        @include transition(color);
+
+        &:hover {
+            color: $tertiary;
+        }
+    }
+
+}
+
+body {
+    font-family: $openSans;
+    font-weight: 400;
+    font-size: var(--base-font-size);
+
+    &.large {
+        --base-font-size: #{$base-font-size-lg};
+        @for $i from 1 to 6 {
+            --h#{$i}-font-size: calc(var(--h#{$i}-base-font-size) * 2);
+        }
+    }
+
+    &.medium {
+        --base-font-size: #{$base-font-size-md};
+        @for $i from 1 to 6 {
+            --h#{$i}-font-size: calc(var(--h#{$i}-base-font-size) * 1.5);
+        }
+    }
+}
+
+a {
+    color: $black;
+    @include transition(color);
+
+    &:hover {
+        color: $gray;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $raleway ;
+    font-weight: 700;
+}
+
+h1 {
+  font-size: var(--h1-font-size);
+}
+h2 {
+  font-size: var(--h2-font-size);
+}
+h3 {
+  font-size: var(--h3-font-size);
+}
+h4 {
+  font-size: var(--h4-font-size);
+}
+h5 {
+  font-size: var(--h5-font-size);
+}
+h6 {
+  font-size: var(--h6-font-size);
+}
