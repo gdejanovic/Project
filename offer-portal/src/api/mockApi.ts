@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosRequestConfig } from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { apiRoutes } from './api.routes';
 
@@ -59,9 +59,7 @@ let mockContracts = [
         "status": "KREIRANO"
     }
 ];
-
-mock.onGet(apiRoutes.contracts).reply(200, mockContracts);
-
+mock.onGet(apiRoutes.contracts).reply(200, mockContracts); 
 mock.onPost(apiRoutes.saveContract).reply(config => {
     const updatedContract = JSON.parse(config.data);
     const index = mockContracts.findIndex(contract => contract.id === updatedContract.id);
@@ -70,20 +68,20 @@ mock.onPost(apiRoutes.saveContract).reply(config => {
         console.log("update ugovora s podacima: ", updatedContract);
         console.table(mockContracts);
         return [200, { message: 'Contract updated successfully' }];
-        
+
     }
     return [404, { message: 'Contract not found' }];
 });
 mock.onPost(apiRoutes.createContract).reply(config => {
-    
+
     const newContract = JSON.parse(config.data);
     newContract.id = mockContracts.length + 1;
     newContract.status = "KREIRANO";
     mockContracts.push(newContract);
-    console.log("backend primio podatke za ugovor: ",newContract);
+    console.log("backend primio podatke za ugovor: ", newContract);
     console.table(mockContracts);
-    
-    
+
+
     return [200, { message: 'Contract created successfully', contract: newContract }];
 });
 mock.onGet(apiRoutes.items).reply(200, mockItems);

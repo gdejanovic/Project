@@ -5,7 +5,7 @@ import { apiRoutes } from '../../../../../../../api/api.routes';
 import { ContractList } from './contracts-list';
 
 export const OrdersTab = () => {
-    const [orders, setOrders] = useState<any[]>([]);
+    const [orders, setOrders] = useState<[]>([]);
     console.log(orders);
     
     useEffect(() => {
