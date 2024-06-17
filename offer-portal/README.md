@@ -6,4 +6,4 @@
 
 # TODO
 Dodati header, footer, rute user role jwt authentikaciju,
-sanitacija koda na fe i be, TOAST poruke korisnicima
+sanitacija koda na Fe i Be, TOAST poruke korisnicima, prijevode i18n je instaliran
